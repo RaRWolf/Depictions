@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class PaintingScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool on;
+
     void Start()
     {
-
+        on = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.forward, out hit, Mathf.Infinity))
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit, Mathf.Infinity) && on)
         {
             if (hit.transform.gameObject.layer == 9)
             {
@@ -25,6 +26,14 @@ public class PaintingScript : MonoBehaviour
                     hit.transform.gameObject.GetComponent<MirrorScript>().activators.Add(transform.gameObject);
                 }
             }
+        }
+    }
+
+    public void Toggle()
+    {
+        if (on)
+        {
+            on = false;
         }
     }
 }

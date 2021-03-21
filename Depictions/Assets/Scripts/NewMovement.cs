@@ -8,6 +8,8 @@ public class NewMovement : MonoBehaviour
     private Vector3 direction;
     public bool moving;
 
+    public List<Rotatable> rotatables = new List<Rotatable>();
+
 
     void Start()
     {
@@ -33,32 +35,17 @@ public class NewMovement : MonoBehaviour
         }
 
 
-
-        if (Input.GetKeyDown("space"))
-        {
-            //Move(Vector3.forward);
-        }
-
-        if (Input.GetKeyDown("s"))
-        {
-            //Move(-Vector3.forward);
-        }
-
-        if (Input.GetKeyDown("d"))
-        {
-           // Move(Vector3.right);
-        }
-
-        if (Input.GetKeyDown("a"))
-        {
-           // Move(-Vector3.right);
-        }
-
-
     }
 
     public void Move(string dir)
     {
+
+        foreach (Rotatable rotatable in rotatables)
+        {
+            rotatable.DeactivateRotate();
+        }
+        rotatables.Clear();
+
         if (dir == "Up")
         {
             direction = Vector3.forward;
@@ -88,14 +75,68 @@ public class NewMovement : MonoBehaviour
                 {
                     hit.transform.gameObject.GetComponent<ObstacleMovement>().Move(direction);
                 }
-
                 //Don't do anything, there's an obstacle in the way!
             }
             else
             {
                 target = transform.position + direction;
             }
-
+            moving = true;
+            StartCoroutine("WaitUntilStopped");
         }
+    }
+
+    public void CheckAllDirections()
+    {
+        Vector3 dir = Vector3.zero;
+        RaycastHit rayHitDirection;
+
+        for(int i = 0; i < 4; i++)
+        {
+            if(i == 0)
+            {
+                dir = Vector3.forward;
+            }
+            if (i == 1)
+            {
+                dir = Vector3.right;
+            }
+            if (i == 2)
+            {
+                dir = -Vector3.forward;
+            }
+            if (i == 3)
+            {
+                dir = -Vector3.right;
+            }
+
+            if (Physics.Raycast(transform.position, dir, out rayHitDirection, 1.4f))
+            {
+                if (rayHitDirection.transform.gameObject.GetComponentInParent<Rotatable>() != null)
+                {
+                    rayHitDirection.transform.gameObject.GetComponentInParent<Rotatable>().ActivateRotate();
+                    rotatables.Add(rayHitDirection.transform.gameObject.GetComponentInParent<Rotatable>());
+                }
+
+
+                if (rayHitDirection.transform.gameObject.GetComponentInParent<PaintingScript>() != null)
+                {
+                    rayHitDirection.transform.gameObject.GetComponentInParent<PaintingScript>().Toggle();
+                }
+
+                if (rayHitDirection.transform.tag == "Exit")
+                {
+                    Debug.Log("You've successfully left the level!");
+                }
+            }
+        }
+
+    }
+
+    IEnumerator WaitUntilStopped()
+    {
+        yield return new WaitUntil(() => !moving);
+
+        CheckAllDirections();
     }
 }

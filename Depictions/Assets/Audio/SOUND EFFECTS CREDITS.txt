@@ -22,3 +22,15 @@ PlayerFootsteps: foosteps concrete by Yuval on freesound.org:
 (Creative Commons 0 License):
 https://freesound.org/people/Yuval/sounds/205748/
 (This audioclip was shortened in Audacity) 
+
+PlayerLose: violin glissando by PhonosUPF on freesound.org:
+(Creative Commons 0 License):
+https://freesound.org/people/PhonosUPF/sounds/502309/ 
+(The pitch of this audioclip was modified in Audacity) 
+
+AND
+
+violin spiccato A2.aif by Idk1609 on freesound.org:
+(Creative Commons 0 License):
+https://freesound.org/people/ldk1609/sounds/56192/
+(The pitch of this audioclip was modified in Audacity)

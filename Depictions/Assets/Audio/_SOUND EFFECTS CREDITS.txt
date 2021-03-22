@@ -1,7 +1,0 @@
-StonePushSFX: Stone,Block,Drag,Wood,Grind.wav by Mediaman57 on freesound.org
-(Creative Commons 0 License):
-https://freesound.org/people/Mediaman57/sounds/347149/
-
-CratePushSFX: chair2.wav by lezaarth on freesound.org
-(Creative Commons 0 License):
-https://freesound.org/people/lezaarth/sounds/232237/ 

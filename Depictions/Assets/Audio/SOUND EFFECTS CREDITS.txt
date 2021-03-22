@@ -2,3 +2,23 @@ StonePushSFX: Stone,Block,Drag,Wood,Grind.wav by Mediaman57 on freesound.org
 (Creative Commons 0 License):
 https://freesound.org/people/Mediaman57/sounds/347149/
 
+CratePushSFX: chair2.wav by lezaarth on freesound.org
+(Creative Commons 0 License):
+https://freesound.org/people/lezaarth/sounds/232237/ 
+(This audioclip was shortened in Audacity) 
+
+DoorOpenSFX: open 01.wav by Anthousai on freesound.org 
+(Creative Commons 0 License): 
+https://freesound.org/people/Anthousai/sounds/398750/ 
+
+AND
+
+Stressed ding ding.wav by ConBlast on freesound.org
+(Creative Commons 0 License): 
+https://freesound.org/people/ConBlast/sounds/562974/ 
+(This audioclip was shortened in Audacity) 
+
+PlayerFootsteps: foosteps concrete by Yuval on freesound.org:
+(Creative Commons 0 License):
+https://freesound.org/people/Yuval/sounds/205748/
+(This audioclip was shortened in Audacity) 

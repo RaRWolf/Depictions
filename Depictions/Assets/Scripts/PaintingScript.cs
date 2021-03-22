@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class PaintingScript : MonoBehaviour
 {
+
+    //edited code to include a way for paintings to fire raycast in direction axis other then Z forward, in inspector set the X and Z to either 0, 1 or -1
     public bool on;
+    public int X, Z;
+    private Vector3 Direction;
 
     void Start()
     {
+        Direction = new Vector3 (X,0,Z);
         on = true;
     }
 
@@ -15,8 +20,9 @@ public class PaintingScript : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.forward, out hit, Mathf.Infinity) && on)
+        if (Physics.Raycast(transform.position, Direction, out hit, Mathf.Infinity) && on)
         {
+            Debug.DrawLine(transform.position + (transform.forward / 2), hit.transform.position, Color.yellow);
             if (hit.transform.gameObject.layer == 9)
             {
                 hit.transform.gameObject.GetComponent<MirrorScript>().activated = true;

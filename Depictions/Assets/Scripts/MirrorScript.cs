@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MirrorScript : MonoBehaviour
 {
+    //tj
+    //edit made so that mirrors will fire the ray based on the parent local positon, allows new mirrors to fire ray at 90 degree angle
     public bool activated;
     public List<GameObject> activators = new List<GameObject>();
 
@@ -24,8 +26,9 @@ public class MirrorScript : MonoBehaviour
         if (activated)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + (transform.forward / 2), transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+            if (Physics.Raycast(transform.position + (transform.forward / 2), transform.parent.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
             {
+                Debug.DrawLine(transform.position + (transform.forward / 2), hit.transform.position, Color.yellow);
                 //If we hit a mirror, activate that mirror.
                 if (hit.transform.gameObject.layer == 9)
                 {

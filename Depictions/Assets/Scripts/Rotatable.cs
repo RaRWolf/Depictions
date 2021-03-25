@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Rotatable : MonoBehaviour
 {
+    //tj
+    //edit made so that the rotation will affect the parent game object--allows the new mirrors to work
     public Canvas myCanvas;
 
     public float rotateAngle = 90f;
@@ -30,13 +32,13 @@ public class Rotatable : MonoBehaviour
     {
         target = transform.rotation;
         target.y = transform.rotation.y + rotateAngle;
-        transform.Rotate(0f, rotateAngle, 0f);
+        transform.parent.Rotate(0f, rotateAngle, 0f);
     }
 
     public void RotateLeft()
     {
         target = transform.rotation;
         target.y = transform.rotation.y - rotateAngle;
-        transform.Rotate(0f,-rotateAngle,0f);
+        transform.parent.Rotate(0f,-rotateAngle,0f);
     }
 }

@@ -135,6 +135,7 @@ public class NewMovement : MonoBehaviour
 
     IEnumerator WaitUntilStopped()
     {
+
         yield return new WaitUntil(() => !moving);
 
         CheckAllDirections();

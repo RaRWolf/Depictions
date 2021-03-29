@@ -33,6 +33,8 @@ public class Rotatable : MonoBehaviour
 
     public void RotateRight()
     {
+        //Play a sound effect for rotation here
+
         target = transform.rotation;
         target.y = transform.rotation.y + rotateAngle;
         transform.parent.Rotate(0f, rotateAngle, 0f);
@@ -52,6 +54,8 @@ public class Rotatable : MonoBehaviour
 
     public void RotateLeft()
     {
+        //Play a sound effect for rotation here
+
         target = transform.rotation;
         target.y = transform.rotation.y - rotateAngle;
         transform.parent.Rotate(0f,-rotateAngle,0f);

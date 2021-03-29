@@ -8,11 +8,14 @@ public class ObstacleMovement : MonoBehaviour
     bool moving;
     private Vector3 target;
 
+    public AudioSource myAudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         moving = false;
         target = transform.position;
+        myAudioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,6 +50,10 @@ public class ObstacleMovement : MonoBehaviour
             else
             {
                 target = transform.position + direction;
+
+
+                //Play a sound effect for an object moving here
+                myAudioSource.Play();
             }
 
         }

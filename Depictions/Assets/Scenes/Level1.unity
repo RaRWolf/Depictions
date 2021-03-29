@@ -1490,6 +1490,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9155505754199255404, guid: 10c1297bf0be43d4e8d54191e892aad6,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155505754199255404, guid: 10c1297bf0be43d4e8d54191e892aad6,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155505754199255404, guid: 10c1297bf0be43d4e8d54191e892aad6,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155505754199255404, guid: 10c1297bf0be43d4e8d54191e892aad6,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9155505754648730282, guid: 10c1297bf0be43d4e8d54191e892aad6,
         type: 3}
       propertyPath: m_Layer
@@ -15612,6 +15632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e9f987cd523994994386493dde3f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mySource: {fileID: 0}
   myCanvas: {fileID: 8590065109748882159}
   rotateAngle: 90
   rotateAngle2: 90

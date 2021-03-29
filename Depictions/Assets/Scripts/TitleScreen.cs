@@ -11,11 +11,4 @@ public class TitleScreen : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-
-    //If the player taps on the Options button,
-    //Load up the options (Add in Panel later) 
-    public void OpenOptions()
-    {
-        //Add in code to pop up a panel for adding in the options 
-    }
 }

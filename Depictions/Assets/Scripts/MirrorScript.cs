@@ -12,11 +12,16 @@ public class MirrorScript : MonoBehaviour
     private LineRenderer line;
     private LineRenderer otherLine;
 
+    public AudioSource myAudioSource;
+    public AudioClip loseSound;
+    private bool soundPlaying;
 
     void Start()
     {
+        soundPlaying = false;
         line = gameObject.GetComponent<LineRenderer>();
         activated = false;
+        myAudioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,6 +57,14 @@ public class MirrorScript : MonoBehaviour
 
                 if(hit.transform.gameObject.name == "Player")
                 {
+                    if (!soundPlaying)
+                    {
+                        myAudioSource.clip = loseSound;
+                        myAudioSource.Play();
+                        soundPlaying = true;
+                    }
+
+
                     line.enabled = true;
                     line.useWorldSpace = true;
                     line.SetPosition(0, transform.position);

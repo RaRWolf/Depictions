@@ -6,7 +6,8 @@ using UnityEngine;
 public class Rotatable : MonoBehaviour
 {
 
-    public AudioSource mySource; 
+    public AudioSource mySource;
+    public AudioClip rotateSound;
 
     //tj
     //edit made so that the rotation will affect the parent game object--allows the new mirrors to work
@@ -37,6 +38,7 @@ public class Rotatable : MonoBehaviour
     public void RotateRight()
     {
         //Play a sound effect for rotation here
+        mySource.clip = rotateSound;
         mySource.Play();
 
         target = transform.rotation;
@@ -59,6 +61,7 @@ public class Rotatable : MonoBehaviour
     public void RotateLeft()
     {
         //Play a sound effect for rotation here
+        mySource.clip = rotateSound;
         mySource.Play();
 
         target = transform.rotation;

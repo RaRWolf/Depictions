@@ -10,11 +10,16 @@ public class NewMovement : MonoBehaviour
 
     public List<Rotatable> rotatables = new List<Rotatable>();
 
+    public AudioSource myAudioSource;
+    public AudioClip winSound;
+    public AudioClip stepSound;
+
 
     void Start()
     {
         moving = false;
         target = transform.position;
+        myAudioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -126,6 +131,8 @@ public class NewMovement : MonoBehaviour
 
                 if (rayHitDirection.transform.tag == "Exit")
                 {
+                    myAudioSource.clip = winSound;
+                    myAudioSource.Play();
                     Debug.Log("You've successfully left the level!");
                 }
             }

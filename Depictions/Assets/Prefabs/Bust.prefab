@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 9053754044819591503}
   - component: {fileID: 4038217129938049128}
   - component: {fileID: 4526381757227954350}
-  - component: {fileID: 4585166381177243575}
+  - component: {fileID: 5740130610859332111}
   m_Layer: 8
   m_Name: Bust
   m_TagString: Untagged
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24ec16498131864fb28414737540e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAudioSource: {fileID: 4585166381177243575}
+  myAudioSource: {fileID: 0}
 --- !u!114 &4038217129938049128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
---- !u!82 &4585166381177243575
+--- !u!82 &5740130610859332111
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

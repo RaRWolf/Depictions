@@ -64,6 +64,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activated: 0
   activators: []
+  myAudioSource: {fileID: 0}
+  loseSound: {fileID: 8300000, guid: be171fac3c4ae7a4097a74afb4eca689, type: 3}
 --- !u!120 &6977755231730836232
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -174,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySource: {fileID: 558480618322647623}
+  rotateSound: {fileID: 8300000, guid: 7ea19ec19b942c448ad0dd52b799f6d1, type: 3}
   myCanvas: {fileID: 8633785586209158278}
   rotateAngle: 90
   rotateAngle2: 270
@@ -189,7 +192,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7ea19ec19b942c448ad0dd52b799f6d1, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
@@ -315,7 +318,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2863287886915802417}
-  m_Mesh: {fileID: 2902908696325443427, guid: b66a32191e36fb4458ea9cc2afa38229, type: 3}
+  m_Mesh: {fileID: 2902908696325443427, guid: 001ff6f89f687aa43b6c2caafc835931, type: 3}
 --- !u!23 &4376528353904309476
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -334,7 +337,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: b66a32191e36fb4458ea9cc2afa38229, type: 3}
+  - {fileID: -1575510698374149435, guid: 001ff6f89f687aa43b6c2caafc835931, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

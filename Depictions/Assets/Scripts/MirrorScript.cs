@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MirrorScript : MonoBehaviour
 {
-    //tj
-    //edit made so that mirrors will fire the ray based on the parent local positon, allows new mirrors to fire ray at 90 degree angle
+    //tj: edit made so that mirrors will fire the ray based on the parent local positon, allows new mirrors to fire ray at 90 degree angle
     public bool activated;
     public List<GameObject> activators = new List<GameObject>();
 
@@ -16,12 +15,15 @@ public class MirrorScript : MonoBehaviour
     public AudioClip loseSound;
     private bool soundPlaying;
 
+    public Fade myCanvas;
+
     void Start()
     {
         soundPlaying = false;
         line = gameObject.GetComponent<LineRenderer>();
         activated = false;
         myAudioSource = gameObject.GetComponent<AudioSource>();
+        myCanvas = GameObject.FindObjectsOfType<Fade>()[0];
     }
 
     // Update is called once per frame
@@ -64,6 +66,9 @@ public class MirrorScript : MonoBehaviour
                         soundPlaying = true;
                     }
 
+                    hit.transform.gameObject.GetComponent<NewMovement>().lose = true;
+
+                    myCanvas.StartCoroutine("FadeIn");
 
                     line.enabled = true;
                     line.useWorldSpace = true;

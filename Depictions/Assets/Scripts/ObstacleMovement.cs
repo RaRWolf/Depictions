@@ -50,8 +50,6 @@ public class ObstacleMovement : MonoBehaviour
             else
             {
                 target = transform.position + direction;
-
-
                 //Play a sound effect for an object moving here
                 myAudioSource.Play();
             }

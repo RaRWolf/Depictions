@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class Rotatable : MonoBehaviour
 {
+    //tj: edit made so that the rotation will affect the parent game object--allows the new mirrors to work
+    //tj: modified to allow turning of new mirrors and set default turning points as 180 degree
 
     public AudioSource mySource;
     public AudioClip rotateSound;
 
-    //tj
-    //edit made so that the rotation will affect the parent game object--allows the new mirrors to work
-    //modified to allow turning of new mirrors and set default turning points as 180 degree
     public Canvas myCanvas;
 
     public float rotateAngle = 180f;

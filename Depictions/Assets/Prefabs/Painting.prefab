@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 7977194808215031866}
   - component: {fileID: 7545013515142517924}
   - component: {fileID: 7980198100543923322}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Painting
   m_TagString: Untagged
   m_Icon: {fileID: 0}

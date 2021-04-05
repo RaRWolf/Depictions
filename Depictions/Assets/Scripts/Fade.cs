@@ -32,4 +32,14 @@ public class Fade : MonoBehaviour
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public IEnumerator Exit()
+    {
+        for (float i = 0; i <= 1; i += Time.deltaTime / 5)
+        {
+            me.color = new Color(0, 0, 0, i);
+            yield return null;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }

@@ -21,6 +21,7 @@ public class NewMovement : MonoBehaviour
     private Quaternion targetRot;
     public GameObject myModel;
     float smooth = 5.0f;
+    public Fade faderScript;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class NewMovement : MonoBehaviour
         target = transform.position;
         myAudioSource = gameObject.GetComponent<AudioSource>();
         lose = false;
+        faderScript = FindObjectOfType<Fade>();
     }
 
     // Update is called once per frame
@@ -130,7 +132,7 @@ public class NewMovement : MonoBehaviour
                         myAudioSource.clip = winSound;
                         myAudioSource.loop = false;
                         myAudioSource.Play();
-                        Debug.Log("You've successfully left the level!");
+                        faderScript.StartCoroutine("Exit");
                     }
                 }
                 else
